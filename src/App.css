@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar {
+  width:100%;
+  height:10vh;
+  background: black;
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer {
+  width:100%;
+  height:10vh;
+  background: black;
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-list {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  text-align: center;
+
+}
+
+.favorites {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  text-align: center;
+
+}
+
+.book-details {
+  min-height: 80vh;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.book-description {
+  margin: 50px;
+}
+
+
+
+img {
+  width: 250px;
+  height: 300px;
+  transition: all 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+.book {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px;
+  background: black;
+  color: white;
+  width:300px;
+  font-size:20px;
+  border-radius: 10px;
+
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  background: rgb(0, 53, 102);
+  z-index: 100;
+
+}
+.logo {
+  color: rgb(255, 195, 0);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.navMenu ul {
+  display: flex;
+}
+
+.navMenu ul li {
+  list-style: none;
+}
+
+.navMenu ul li .link {
+  text-decoration: none;
+  font-weight: 500;
+  color: rgb(255, 214, 10);
+  padding-bottom: 15px;
+  margin: 0 25px;
+}
+
+.link:hover {
+  border-bottom: 2px solid rgb(255, 214, 10);
+}
+
+.navButton .button {
+  width: 130px;
+  height: 40px;
+  font-weight: 500;
+  background: rgb(0, 53, 102);
+  color: rgb(255, 214, 10);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#signIn {
+  /*odstęp pomiędzy przyciskami zaloguj i zarejestruj */
+ margin-left: 15px;
+}
+
+.button:hover {
+  background: rgb(255, 214, 10);
+  color: rgb(0, 53, 102);
+
+}
+
+.navMenuButton {
+  display: none;
+}
+
