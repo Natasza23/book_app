@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react' ;
+{/*import React, {useState, useEffect } from 'react' ;
 import '../App.css';
 import { API_URL } from '../API';
 import axios from 'axios';
@@ -44,14 +44,11 @@ const BookList = () => {
                         ) : (
                         <button onClick={()=> addToFavorites(book)}>Dodaj do ulubionych</button>
                         )}
-                        
                     </div>
                 </div>
-            )
-            )}
+            ))}
         </div>
     );
-
 };
 
-export default BookList;
+export default BookList;*/}

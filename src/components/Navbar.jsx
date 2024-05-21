@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
-
+import {Link} from 'react-router-dom'
+import SearchBox from './SearchBox';
 
 
 const Navbar = () => {
@@ -15,12 +16,16 @@ const Navbar = () => {
                 <ul>
                     <li><a href="index.html" class="link">Strona główna</a></li>
                     <li><a href="Nowosci.html" class="link">Nowości</a></li>
-                    <li><a href="katalog.html" class="link">Katalog</a></li>
+                    
+                    <li><Link to="/katalog"><h3>Katalog</h3></Link></li>
                     <li><a href="spolecznosc.html" class="link">Społeczność</a></li>
                     <li><a href="top100.html" class="link">Top 100</a></li>
-                    <li><a href="/Favorites" class="link">Ulubione</a></li>
+                    <li><Link to="/Favorites"><h3>Ulubione</h3></Link></li>
 
                 </ul>
+            </div>
+            <div class="search">
+                <SearchBox/>
             </div>
             <div class="navButton">
                 <button class="button" id="logIn">Zaloguj</button>
