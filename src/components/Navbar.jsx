@@ -10,17 +10,20 @@ const Navbar = () => {
         <div class="wrapper">
         <div className="navbar">
             <div class="logo">
-                <p>LOGO</p>
+                <p>Book App</p>
+                
             </div>
             <div class="navMenu">
                 <ul>
-                    <li><a href="index.html" class="link">Strona główna</a></li>
-                    <li><a href="Nowosci.html" class="link">Nowości</a></li>
                     
+                    
+                    <li><Link to="/MainPage"><h3>Strona główna</h3></Link></li>
+                    <li><Link to="/TBR"><h3>Chcę przeczytać</h3></Link></li>
+                    <li><Link to="/MojaPolka"><h3>Moja półka</h3></Link></li>
                     <li><Link to="/katalog"><h3>Katalog</h3></Link></li>
-                    <li><a href="spolecznosc.html" class="link">Społeczność</a></li>
-                    <li><a href="top100.html" class="link">Top 100</a></li>
+                    <li><Link to="/Najlepsze"><h3>Najlepiej oceniane</h3></Link></li>
                     <li><Link to="/Favorites"><h3>Ulubione</h3></Link></li>
+                   
 
                 </ul>
             </div>
@@ -28,8 +31,8 @@ const Navbar = () => {
                 <SearchBox/>
             </div>
             <div class="navButton">
-                <button class="button" id="logIn">Zaloguj</button>
-                <button class="button" id="signIn">Zarejestruj</button>
+                <Link to="/zaloguj"><button class="button" id="logIn">Zaloguj</button></Link>
+                <Link to="/zarejestruj"><button class="button" id="signIn" >Zarejestruj</button></Link>
             </div>
             <div class="navMenuButton">
                 <i class="bx bx-menu"></i>

@@ -8,6 +8,8 @@ import Favorites from './components/Favorites';
 import Katalog from './components/Katalog';
 import { Link } from 'react-router-dom';
 import SearchBox from './components/SearchBox';
+import LoginForm from './components/zaloguj';
+import RegisterForm from './components/zarejestruj';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/books/:id" element={<BookDetails/>} />
         <Route path="/favorites" element={<Favorites/>} />
         <Route path="/katalog" element={<Katalog/>} />
+        <Route path="/zaloguj" element={<LoginForm/>} />
+        <Route path="/zarejestruj" element={<RegisterForm/>} />
       </Routes>
       <Footer/>
       
