@@ -23,13 +23,12 @@ const Navbar = () => {
                     <li><Link to="/katalog"><h3>Katalog</h3></Link></li>
                     <li><Link to="/Najlepsze"><h3>Najlepiej oceniane</h3></Link></li>
                     <li><Link to="/Favorites"><h3>Ulubione</h3></Link></li>
+                    <li><Link to="/SearchBox"><h3>Szukaj</h3></Link></li>
                    
 
                 </ul>
             </div>
-            <div class="search">
-                <SearchBox/>
-            </div>
+            
             <div class="navButton">
                 <Link to="/zaloguj"><button class="button" id="logIn">Zaloguj</button></Link>
                 <Link to="/zarejestruj"><button class="button" id="signIn" >Zarejestruj</button></Link>

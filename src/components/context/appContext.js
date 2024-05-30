@@ -19,26 +19,35 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({children}) => {
     const [favorites, setFavorites] = useState([]);
+    const [readBooks, setReadBooks] = useState([]);
+    const [toReadBooks, setToReadBooks] = useState([]);
 
     const addToFavorites = (book) => {
-        const oldFavorites=[...favorites];
-
-        const newFavorites = oldFavorites.concat(book);
-
-        setFavorites(newFavorites);
-
+        setFavorites((prevFavorites) => [...prevFavorites, book]);
     };
-
+    
     const removeFromFavorites = (id) => {
-        const oldFavorites = [...favorites];
-        const newFavorites = oldFavorites.filter((book)=>book.id !== id);
-
-        setFavorites(newFavorites);
-
+        setFavorites((prevFavorites) => prevFavorites.filter((book) => book.id !== id));
     };
+
+    const addToReadBooks = (book) => {
+        setReadBooks ((prevReadBooks)=> [...prevReadBooks, book]);
+    };
+    
+    
+
+    const addToToReadBooks = (book) => {
+        setToReadBooks ((prevToReadBooks)=> [...prevToReadBooks, book]);
+    };
+    const removeFromToReadBooks = (id) => {
+        setToReadBooks ((prevToReadBooks)=> prevToReadBooks.filter((book) => book.id !== id));
+    };
+
+
+   
 
     return (
-        <AppContext.Provider value={{favorites, addToFavorites, removeFromFavorites}}>
+        <AppContext.Provider value={{favorites, addToFavorites, removeFromFavorites, readBooks, addToReadBooks, toReadBooks, addToToReadBooks, removeFromToReadBooks}}>
             {children}
         </AppContext.Provider>
     );
