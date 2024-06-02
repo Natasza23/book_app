@@ -44,7 +44,7 @@ const ReadBooks = () => {
                         )}
                     </div>
                 </div>
-            )):(<h1>Nie masz jeszcze przeczytanych książek!</h1>)}
+            )):(<h1 className='answer'>Nie masz jeszcze przeczytanych książek!</h1>)}
         </div>
     );
 

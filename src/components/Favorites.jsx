@@ -44,7 +44,7 @@ const Favorites = () => {
                         )}
                     </div>
                 </div>
-            )):(<h1>Nie masz jeszcze ulubionych książek!</h1>)}
+            )):(<h1 className='answer'>Nie masz jeszcze ulubionych książek!</h1>)}
         </div>
     );
 

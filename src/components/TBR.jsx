@@ -35,7 +35,7 @@ const ToReadBooks = () => {
                         <button onClick={()=> removeFromToReadBooks(book.id)}>Usuń z do przeczytania</button>
                     </div>
                 </div>
-            )):(<h1>Nie masz jeszcze książek do przeczytania!</h1>)}
+            )):(<h1 className='answer'>Nie masz jeszcze książek do przeczytania!</h1>)}
         </div>
     );
 
