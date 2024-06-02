@@ -91,7 +91,7 @@ a {
 
 }
 
-.button {
+.button, .add_button {
   width: 130px;
   height: 40px;
   font-weight: 500;
@@ -131,6 +131,7 @@ a {
   background-position: center;
 }
 
+
 .home::before {
   content: "";
   position: absolute;
@@ -148,6 +149,17 @@ a {
   pointer-events: auto;
 }
 
+/*user page*/
+
+p {
+  font-size: 24px;
+  color: rgb(0, 8, 20);
+  padding-top: 120px;
+  padding-left: 20px;
+}
+.add_button {
+  margin-left: 10px;
+}
 /* From */
 .form_container {
   position: fixed;

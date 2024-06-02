@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Książki</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Unicons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav">
-        <img src="images/logo.png" class="nav_logo">
 
-        <ul class="nav_items">
-          <li class="nav_item">
-            <a href="#" class="nav_link">Strona główna</a>
-            <a href="#" class="nav_link">Katalog</a>
-            <a href="#" class="nav_link">Top 100</a>
-            <a href="#" class="nav_link">Contact</a>
-          </li>
-        </ul>
-        <div class="nav_button">
-        <button class="my_profile_btn" id="form-open">Mój Profil</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Książki</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav">
+      <img src="images/logo.png" class="nav_logo">
+
+      <ul class="nav_items">
+        <li class="nav_item">
+          <a href="#" class="nav_link">Strona główna</a>
+          <a href="#" class="nav_link">Katalog</a>
+          <a href="#" class="nav_link">Najlepiej oceniane</a>
+          <a href="#" class="nav_link">Szukaj</a>
+        </li>
+      </ul>
+      <div class="nav_button">
+        <a href="strona_uzytkownika.html">
+          <button class="my_profile_btn" id="form-open">Mój Profil</button>
+        </a>
         <button class="logout_btn" id="logout_btn">Wyloguj</button>
+      </div>
+    </nav>
+  </header>
+  <section class="home">
+    <div>
+      <p>Ulubione</p>
+      <a href="Katalog.html">
+        <button class="add_button">Dodaj książkę</button> </a>
+      <p>Moja półka</p>
+      <a href="Katalog.html">
+        <button class="add_button">Dodaj książkę</button> </a>
+      <p>Chcę przeczytać</p>
+      <a href="Katalog.html">
+        <button class="add_button">Dodaj książkę</button> </a>
     </div>
-      </nav>
-    </header>
-    <section class="home">
+  </section>
+  <script type="module" src="logout.js" defer></script>
+  <script type="module" src="database.js" defer></script>
+</body>
 
-    </section>
-    <script type="module" src="logout.js" defer></script>
-    </body>
-    </html>
+</html>

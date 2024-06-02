@@ -26,7 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-//zarejestruj
+//wyloguj
 const logout = document.getElementById('logout_btn');
 logout.addEventListener("click", function (event) {
     event.preventDefault()
