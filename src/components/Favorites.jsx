@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react' ;
+import React, { useEffect } from 'react' ;
 import '../App.css';
 import { useAppContext } from './context/appContext';
 import { API_URL } from '../API';
@@ -6,48 +6,35 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Favorites = () => {
-    const {favorites, addToFavorites, removeFromFavorites} = useAppContext();
-
-    console.log("favorites are", favorites);
+    const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
+    const navigate = useNavigate();
 
     const favoritesChecker = (id) => {
-        const boolean = favorites.some((book) => book.id === id);
-        return boolean;
+        return favorites.some((book) => book.id === id);
     };
 
-    const navigate = useNavigate();
-    const setBooks = useState([]);
-
-    useEffect(()=> {
-        axios.get(API_URL).then(res=>{
-            console.log (res.data)
-            setBooks(res.data)
-        }).catch(err=>console.log(err));
-    }
-    ,[]);
 
     return (
         <div className='favorites'>
-            {favorites.length > 0 ? favorites.map ((book)=>(
+            {favorites.length > 0 ? favorites.map((book) => (
                 <div key={book.id} className="book">
                     <div>
                         <h3>{book.title}</h3>
                     </div>
                     <div>
-                        <img src={book.image_url} alt="#" onClick={()=>navigate(`/books/${book.id}`)}/>
+                        <img src={book.image_url} alt="#" onClick={() => navigate(`/books/${book.id}`)} />
                     </div>
                     <div>
                         {favoritesChecker(book.id) ? (
-                        <button onClick={()=> removeFromFavorites(book.id)}>Usuń z ulubionych</button>
+                            <button onClick={() => removeFromFavorites(book.id)}>Usuń z ulubionych</button>
                         ) : (
-                        <button onClick={()=> addToFavorites(book)}>Dodaj do ulubionych</button>
+                            <button onClick={() => addToFavorites(book)}>Dodaj do ulubionych</button>
                         )}
                     </div>
                 </div>
-            )):(<h1 className='answer'>Nie masz jeszcze ulubionych książek!</h1>)}
+            )) : (<h1 className='answer'>Nie masz jeszcze ulubionych książek!</h1>)}
         </div>
     );
-
 };
 
 export default Favorites;

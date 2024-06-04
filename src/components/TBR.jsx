@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const ToReadBooks = () => {
     const {toReadBooks, addToToReadBooks, removeFromToReadBooks} = useAppContext();
 
-    console.log("to read books are", toReadBooks);
-
     const navigate = useNavigate();
     const[books, setBooks] = useState([]);
 
