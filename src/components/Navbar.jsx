@@ -1,38 +1,45 @@
 import React from 'react';
 import '../App.css';
-
-
+import { Link } from 'react-router-dom';
+import AuthForms from './AuthForms';
+import { useAuth } from './context/AuthContext';
+import logo from '../logo.png';
 
 const Navbar = () => {
+    const { user, logout } = useAuth();
+
     return (
-        
-        <div class="wrapper">
-        <div className="navbar">
-            <div class="logo">
-                <p>LOGO</p>
-            </div>
-            <div class="navMenu">
-                <ul>
-                    <li><a href="index.html" class="link">Strona główna</a></li>
-                    <li><a href="Nowosci.html" class="link">Nowości</a></li>
-                    <li><a href="katalog.html" class="link">Katalog</a></li>
-                    <li><a href="spolecznosc.html" class="link">Społeczność</a></li>
-                    <li><a href="top100.html" class="link">Top 100</a></li>
-                    <li><a href="/Favorites" class="link">Ulubione</a></li>
-
-                </ul>
-            </div>
-            <div class="navButton">
-                <button class="button" id="logIn">Zaloguj</button>
-                <button class="button" id="signIn">Zarejestruj</button>
-            </div>
-            <div class="navMenuButton">
-                <i class="bx bx-menu"></i>
-            </div>
-        </div>
-        </div>
+        <>
+            <header className="header">
+                <div className="wrapper">
+                    <div className="navbar">
+                        <img src={logo} className="nav_logo" alt="logo" />
+                        <div className="navMenu">
+                            <ul>
+                                <li><Link to="/MainPage">Strona główna</Link></li>
+                                {user && (
+                                    <>
+                                        <li><Link to="/TBR">Chcę przeczytać</Link></li>
+                                        <li><Link to="/MojaPolka">Moja półka</Link></li>
+                                        <li><Link to="/Favorites">Ulubione</Link></li>
+                                    </>
+                                )}
+                                <li><Link to="/katalog">Katalog</Link></li>
+                                <li><Link to="/Najlepsze">Najlepiej oceniane</Link></li>
+                                <li><Link to="/SearchBox">Szukaj</Link></li>
+                            </ul>
+                            {!user ? (
+                                <button className="button" id="form-open">Zaloguj</button>
+                            ) : (
+                                <button className="button" onClick={logout}>Wyloguj</button>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <AuthForms />
+        </>
     );
-
 };
 
 export default Navbar;

@@ -1,8 +1,13 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
+
+
 
 body {
   background: url("../images/background.jpg");
@@ -11,26 +16,108 @@ body {
   background-attachment: fixed;
 }
 
+
+/*Nawigacja*/
+
 .navbar {
-  width:100%;
-  height:10vh;
-  background: black;
-  color:white;
-  display:flex;
+  display: flex;
+  height: 120px;
   align-items: center;
-  justify-content: space-evenly;
+  text-decoration: none;
+  justify-content: space-between;
+  background: rgb(0, 53, 102);
+  line-height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  margin: 10px;
+  border-radius: 20px;
+  
 }
 
+.navbar ul {
+  display: flex;
+  list-style-type: none; /* Usunięcie domyślnego punktowania */
+  padding: 100px; 
+}
+
+.navbar li {
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: larger;
+  color: rgb(255, 195, 0);
+  
+}
+
+
+.navMenu  {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(0, 53, 102);
+  line-height: 50px;
+  column-gap: 50px;
+}
+
+
+/*logo*/
+.nav_logo {
+  color: rgb(255, 195, 0);
+  padding: 10px 40px;
+  height: 100%; 
+  justify-content: left;
+}
+img {
+  width: 250px;
+  height: 300px;
+  transition: all 0.5s ease;
+  
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+  
+/*wylogowanie*/
+
+.logout_btn {
+  color: rgb(255, 195, 0);
+  padding: 0 40px;
+  width: 160px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  background: rgb(0, 53, 102);
+  color: rgb(255, 195, 0);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout_btn:hover {
+  background: rgb(255, 195, 0);
+  color: rgb(0, 53, 102);
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+
+/*stopka*/
 .footer {
   width:100%;
   height:10vh;
-  background: black;
-  color:white;
+  background:  rgb(0, 53, 102);
+  color:#FFC300;
   display:flex;
   align-items: center;
   justify-content: center;
 }
 
+/*wyswietlanie ksiązek*/
 .book-list {
   min-height: 80vh;
   width: 100%;
@@ -41,6 +128,7 @@ body {
 
 }
 
+/*ulubione*/
 .favorites {
   min-height: 80vh;
   width: 100%;
@@ -51,28 +139,18 @@ body {
 
 }
 
+/*szczegóły książki*/
 .book-details {
   min-height: 80vh;
   width: 100%;
   display:flex;
   align-items: center;
   justify-content: space-evenly;
+  padding: 100px;
 }
 
 .book-description {
-  margin: 50px;
-}
-
-
-
-img {
-  width: 250px;
-  height: 300px;
-  transition: all 0.5s ease;
-}
-
-img:hover {
-  transform: scale(1.2);
+  margin: 80px;
 }
 
 .book {
@@ -84,78 +162,53 @@ img:hover {
   margin: 20px 0;
 }
 
+/*przyciski z katalogów*/
 button {
   padding: 10px;
-  background: black;
-  color: white;
+  background: #003566;
+  color: #E6C001;
   width:300px;
   font-size:20px;
-  border-radius: 10px;
-
-
+  border-radius: 20px;
+  border-style: none;
+  margin-top: 10px;
 }
 
 .wrapper {
   display: flex;
+  height: 200px;
   justify-content: center;
   align-items: center;
-  min-height: 110vh;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  background: rgb(0, 53, 102);
-  z-index: 100;
 
 }
-.logo {
-  color: rgb(255, 195, 0);
-  font-size: 25px;
-  font-weight: 600;
-}
 
-.navMenu ul {
-  display: flex;
-}
 
-.navMenu ul li {
-  list-style: none;
-}
-
-.navMenu ul li .link {
+/*podkreślenia linków i pozostałe przyciski*/
+a{
   text-decoration: none;
   font-weight: 500;
   color: rgb(255, 214, 10);
-  padding-bottom: 15px;
-  margin: 0 25px;
 }
 
-.link:hover {
+a:hover {
   border-bottom: 2px solid rgb(255, 214, 10);
 }
 
-.navButton .button {
-  width: 130px;
-  height: 40px;
+
+.button {
+  width: 150px;
   font-weight: 500;
+  font-size: 20px;
   background: rgb(0, 53, 102);
   color: rgb(255, 214, 10);
   border: none;
-  border-radius: 30px;
+  border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
+  
 }
 
-#signIn {
-  /*odstęp pomiędzy przyciskami zaloguj i zarejestruj */
- margin-left: 15px;
-}
+
 
 .button:hover {
   background: rgb(255, 214, 10);
@@ -163,7 +216,196 @@ button {
 
 }
 
-.navMenuButton {
+
+
+/* Fromularz */
+
+.form_container {
+  position: fixed;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: rgb(0, 53, 102);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+/*chowanie formularza*/
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.signup_form {
   display: none;
 }
 
+.form_container.active .signup_form {
+  display: block;
+}
+
+.form_container.active .login_form {
+  display: none;
+}
+
+/*zamknięcie formularza*/
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: rgb(255, 195, 0);
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/*tytuł formularza*/
+.form_container h2 {
+  font-size: 22px;
+  color: rgb(255, 195, 0);
+  text-align: center;
+}
+
+/*ustawienie pól formularza*/
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+
+/*dekoracje pól formularza i ikony*/
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: rgb(0, 8, 20);
+  transition: all 0.2s ease;
+  border-bottom: 3.5px solid #aaaaaa;
+}
+
+.input_box input:focus {
+  border-color: rgb(20, 8, 20);
+}
+
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+}
+
+.input_box i.email,
+.input_box i.password {
+  left: 0;
+}
+
+.input_box input:focus~i.email,
+.input_box input:focus~i.password {
+  color: rgb(0, 29, 61);
+}
+
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* zapamiętaj/zapomniałem hasla*/
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form_container a {
+  color: rgb(255, 195, 0);
+  font-size: 12px;
+}
+
+.checkbox {
+  display: flex;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+
+.checkbox input {
+  accent-color: rgb(255, 195, 0);
+}
+
+.checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: rgb(255, 195, 0);
+}
+
+/*przyciski logowania i rejestracji*/
+.form_container .button {
+  background: rgb(255, 195, 0);
+  color: rgb(0, 53, 102);
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 15px;
+}
+
+.login_signup {
+  color: rgb(255, 195, 0);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/*wyszukiwarka*/
+.search-container {
+  margin: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+}
+
+/*szczegóły książki*/
+.book-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.book-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.book-item p {
+  margin: 5px 0;
+}
+
+.answer {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie wzdłuż osi poziomej */
+  align-items: center; /* Wyśrodkowanie wzdłuż osi pionowej */
+  height: 100vh; /* Ustawienie wysokości na całą wysokość widoku */
+}
