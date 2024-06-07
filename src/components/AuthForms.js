@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
-import '../App.css'; // Zakładając, że style są w App.css
+import '../App.css';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
@@ -68,7 +68,7 @@ const AuthForms = () => {
                     signInWithEmailAndPassword(auth, email, password)
                         .then((userCredential) => {
                             login(userCredential.user);
-                            navigate("/Profile");
+                            navigate("/LoggedIn");
                         })
                         .catch((error) => {
                             alert(error.message);
@@ -87,7 +87,7 @@ const AuthForms = () => {
                         .then((userCredential) => {
                             login(userCredential.user);
                             alert("Konto utworzone");
-                            navigate("/Profile");
+                            navigate("/LoggedIn");
                         })
                         .catch((error) => {
                             alert(error.message);
@@ -114,7 +114,7 @@ const AuthForms = () => {
     }, [navigate, login]);
 
     if (user) {
-        return null; // Ukryj formularz, gdy użytkownik jest zalogowany
+        return null;
     }
 
     return (

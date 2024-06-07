@@ -18,38 +18,35 @@ body {
 
 
 /*Nawigacja*/
-.navMenu {
-  column-gap: 10px;
-}
 
 .navbar {
   display: flex;
   height: 120px;
   align-items: center;
   text-decoration: none;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: rgb(0, 53, 102);
   line-height: 50px;
   width: 100%;
-  margin-left: 10px;
-  margin-right: 10px;
   position: fixed;
   top: 0;
-  left: 0;
+  margin: 10px;
   border-radius: 20px;
-  margin-top: 10px;
+  
 }
 
 .navbar ul {
   display: flex;
-  justify-content: space-between; /* Rozłożenie elementów na całej szerokości */
   list-style-type: none; /* Usunięcie domyślnego punktowania */
-  padding: 150px; /* Usunięcie wewnętrznego marginesu */
+  padding: 100px; 
 }
 
 .navbar li {
-  flex: 1; /* Równomierne rozłożenie elementów na szerokości */
-  text-align: center; /* Wycentrowanie tekstu */
+  text-decoration: none;
+  padding: 0 30px;
+  font-size: larger;
+  color: rgb(255, 195, 0);
+  
 }
 
 
@@ -60,50 +57,30 @@ body {
   justify-content: space-between;
   background: rgb(0, 53, 102);
   line-height: 50px;
+  column-gap: 50px;
 }
 
-.nav_link {
-  text-decoration: none;
-  font-weight: 500;
-  color: rgb(255, 195, 0);
-  padding: 0 30px;
-  margin-right: 10px;
-}
 
-.nav_link:hover {
-  border-bottom: 2px solid rgb(255, 214, 10);
-
-}
-
+/*logo*/
 .nav_logo {
   color: rgb(255, 195, 0);
   padding: 10px 40px;
   height: 100%; 
+  justify-content: left;
+}
+img {
+  width: 250px;
+  height: 300px;
+  transition: all 0.5s ease;
   
 }
 
+img:hover {
+  transform: scale(1.2);
+}
+
   
-/*logowanie*/
-
-.my_profile_btn {
-  color: rgb(255, 195, 0);
-  padding: 0 40px;
-  width: 160px;
-  height: 40px;
-  font-weight: 500;
-  font-size: 16px;
-  background: rgb(0, 53, 102);
-  color: rgb(255, 195, 0);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.my_profile_btn:hover {
-  background: rgb(255, 195, 0);
-  color: rgb(0, 53, 102);
-}
+/*wylogowanie*/
 
 .logout_btn {
   color: rgb(255, 195, 0);
@@ -115,7 +92,7 @@ body {
   background: rgb(0, 53, 102);
   color: rgb(255, 195, 0);
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -129,9 +106,7 @@ body {
 }
 
 
-
-
-
+/*stopka*/
 .footer {
   width:100%;
   height:10vh;
@@ -153,6 +128,7 @@ body {
 
 }
 
+/*ulubione*/
 .favorites {
   min-height: 80vh;
   width: 100%;
@@ -163,6 +139,7 @@ body {
 
 }
 
+/*szczegóły książki*/
 .book-details {
   min-height: 80vh;
   width: 100%;
@@ -176,18 +153,6 @@ body {
   margin: 80px;
 }
 
-
-
-img {
-  width: 250px;
-  height: 300px;
-  transition: all 0.5s ease;
-}
-
-img:hover {
-  transform: scale(1.2);
-}
-
 .book {
   text-align: center;
   display: flex;
@@ -197,13 +162,16 @@ img:hover {
   margin: 20px 0;
 }
 
+/*przyciski z katalogów*/
 button {
   padding: 10px;
   background: #003566;
   color: #E6C001;
   width:300px;
   font-size:20px;
-  border-radius: 10px;
+  border-radius: 20px;
+  border-style: none;
+  margin-top: 10px;
 }
 
 .wrapper {
@@ -214,6 +182,8 @@ button {
 
 }
 
+
+/*podkreślenia linków i pozostałe przyciski*/
 a{
   text-decoration: none;
   font-weight: 500;
@@ -225,50 +195,20 @@ a:hover {
 }
 
 
-.logo {
-  color: rgb(255, 195, 0);
-  font-size: 25px;
-  font-weight: 600;
-}
-
-/*.navMenu ul {
-  display: flex;
-}
-
-.navMenu ul li {
-  list-style: none;
-  padding: 7px;
-}
-
-.navMenu ul li .link {
-  text-decoration: none;
+.button {
+  width: 150px;
   font-weight: 500;
-  color: rgb(255, 214, 10);
-  padding-bottom: 15px;
-  margin: 0 25px;
-}*/
-
-.link:hover {
-  border-bottom: 2px solid rgb(255, 214, 10);
-}
-
-.navButton .button {
-  width: 130px;
-  height: 40px;
-  font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   background: rgb(0, 53, 102);
   color: rgb(255, 214, 10);
   border: none;
-  border-radius: 30px;
+  border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
+  
 }
 
-#signIn {
-  /*odstęp pomiędzy przyciskami zaloguj i zarejestruj */
- margin-left: 15px;
-}
+
 
 .button:hover {
   background: rgb(255, 214, 10);
@@ -276,36 +216,9 @@ a:hover {
 
 }
 
-.navMenuButton {
-  display: none;
-}
 
-.home {
-  position: relative;
-  height: 100px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-}
 
-.home::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.5s ease-out;
-}
-
-.home.show::before {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* From */
+/* Fromularz */
 
 .form_container {
   position: fixed;
@@ -315,7 +228,7 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
   z-index: 101;
-  background: rgb(255, 214, 10);
+  background: rgb(0, 53, 102);
   padding: 25px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.1);
@@ -323,7 +236,7 @@ a:hover {
   pointer-events: none;
   transition: all 0.4s ease-out;
 }
-
+/*chowanie formularza*/
 .home.show .form_container {
   opacity: 1;
   pointer-events: auto;
@@ -342,22 +255,25 @@ a:hover {
   display: none;
 }
 
+/*zamknięcie formularza*/
 .form_close {
   position: absolute;
   top: 10px;
   right: 20px;
-  color: rgb(0, 8, 20);
+  color: rgb(255, 195, 0);
   font-size: 22px;
   opacity: 0.7;
   cursor: pointer;
 }
 
+/*tytuł formularza*/
 .form_container h2 {
   font-size: 22px;
-  color: rgb(0, 8, 20);
+  color: rgb(255, 195, 0);
   text-align: center;
 }
 
+/*ustawienie pól formularza*/
 .input_box {
   position: relative;
   margin-top: 30px;
@@ -365,6 +281,7 @@ a:hover {
   height: 40px;
 }
 
+/*dekoracje pól formularza i ikony*/
 .input_box input {
   height: 100%;
   width: 100%;
@@ -373,11 +290,11 @@ a:hover {
   padding: 0 30px;
   color: rgb(0, 8, 20);
   transition: all 0.2s ease;
-  border-bottom: 1.5px solid #aaaaaa;
+  border-bottom: 3.5px solid #aaaaaa;
 }
 
 .input_box input:focus {
-  border-color: rgb(0, 53, 102);
+  border-color: rgb(20, 8, 20);
 }
 
 .input_box i {
@@ -395,7 +312,7 @@ a:hover {
 
 .input_box input:focus~i.email,
 .input_box input:focus~i.password {
-  color: rgb(0, 53, 102);
+  color: rgb(0, 29, 61);
 }
 
 .input_box i.pw_hide {
@@ -404,6 +321,7 @@ a:hover {
   cursor: pointer;
 }
 
+/* zapamiętaj/zapomniałem hasla*/
 .option_field {
   margin-top: 14px;
   display: flex;
@@ -412,12 +330,8 @@ a:hover {
 }
 
 .form_container a {
-  color: rgb(0, 53, 102);
+  color: rgb(255, 195, 0);
   font-size: 12px;
-}
-
-.form_container a:hover {
-  text-decoration: underline;
 }
 
 .checkbox {
@@ -427,30 +341,34 @@ a:hover {
 }
 
 .checkbox input {
-  accent-color: rgb(0, 53, 102);
+  accent-color: rgb(255, 195, 0);
 }
 
 .checkbox label {
   font-size: 12px;
   cursor: pointer;
   user-select: none;
-  color: rgb(0, 53, 102);
+  color: rgb(255, 195, 0);
 }
 
+/*przyciski logowania i rejestracji*/
 .form_container .button {
-  background: rgb(0, 53, 102);
+  background: rgb(255, 195, 0);
+  color: rgb(0, 53, 102);
   margin-top: 30px;
   width: 100%;
   padding: 10px 0;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .login_signup {
+  color: rgb(255, 195, 0);
   font-size: 12px;
   text-align: center;
   margin-top: 15px;
 }
 
+/*wyszukiwarka*/
 .search-container {
   margin: 20px;
 }
@@ -468,6 +386,7 @@ a:hover {
   flex-direction: column;
 }
 
+/*szczegóły książki*/
 .book-item {
   margin-bottom: 10px;
   padding: 10px;

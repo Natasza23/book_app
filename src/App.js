@@ -8,23 +8,25 @@ import Katalog from './components/Katalog';
 import Najlepsze from './components/Najlepsze';
 import Favorites from './components/Favorites';
 import SearchBox from './components/SearchBox';
-import Profile from './components/Profile';
+import LoggedIn from './components/LoggedIn';
 import AuthForms from './components/AuthForms';
 import BookDetails from './components/BookDetail';
 import PrivateRoute from './components/PrivateRoute';
+import MainPage from './components/MainPage'
 
 const App = () => {
     return (
         <AuthProvider>
                 <Navbar />
                 <Routes>
+                    <Route path='/MainPage' element={<MainPage />} />
                     <Route path="/TBR" element={<PrivateRoute><TBR /></PrivateRoute>} />
                     <Route path="/MojaPolka" element={<PrivateRoute><MojaPolka /></PrivateRoute>} />
                     <Route path="/katalog" element={<Katalog />} />
                     <Route path="/Najlepsze" element={<Najlepsze />} />
                     <Route path="/Favorites" element={<PrivateRoute><Favorites /></PrivateRoute>} />
                     <Route path="/SearchBox" element={<SearchBox />} />
-                    <Route path="/Profile" element={<Profile />} />
+                    <Route path="/LoggedIn" element={<LoggedIn />} />
                     <Route path="/AuthForms" element={<AuthForms />} />
                     <Route path="/books/:id" element={<BookDetails />} />
                 </Routes>
