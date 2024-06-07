@@ -2,9 +2,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
-import '../App.css'; // Zakładając, że style są w App.css
+import '../App.css';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
 
 const firebaseConfig = {
@@ -68,7 +68,7 @@ const AuthForms = () => {
                     signInWithEmailAndPassword(auth, email, password)
                         .then((userCredential) => {
                             login(userCredential.user);
-                            navigate("/Profile");
+                            navigate("/LoggedIn");
                         })
                         .catch((error) => {
                             alert(error.message);
@@ -87,7 +87,7 @@ const AuthForms = () => {
                         .then((userCredential) => {
                             login(userCredential.user);
                             alert("Konto utworzone");
-                            navigate("/Profile");
+                            navigate("/LoggedIn");
                         })
                         .catch((error) => {
                             alert(error.message);
@@ -110,22 +110,30 @@ const AuthForms = () => {
                         });
                 });
             }
+            const auth = getAuth();
+            sendEmailVerification(auth.currentUser)
+                .then(() => {
+                    alert("Wysłano email z potwierdzeniem założenia konta");
+                        })
+                        .catch((error) => {
+                            alert(error.message);
+                    // Email verification sent!
+                    // ...
+                });
         }
     }, [navigate, login]);
 
     if (user) {
-        return null; // Ukryj formularz, gdy użytkownik jest zalogowany
+        return null;
     }
 
     return (
         <section className="home">
-            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
             <div className="form_container">
                 <i className="uil uil-times form_close"></i>
                 <div className="form login_form">
                     <form action="#">
-                        <h2>Zaloguj się</h2>
+                        <h2>Login</h2>
                         <div className="input_box">
                             <input type="email" placeholder="Wpisz swój email" id="email" required />
                             <i className="uil uil-envelope-alt email"></i>
@@ -148,7 +156,7 @@ const AuthForms = () => {
                 </div>
                 <div className="form signup_form">
                     <form action="#">
-                        <h2>Zarejestruj się</h2>
+                        <h2>Signup</h2>
                         <div className="input_box">
                             <input type="email" placeholder="Wpisz swój email" id="email" required />
                             <i className="uil uil-envelope-alt email"></i>
