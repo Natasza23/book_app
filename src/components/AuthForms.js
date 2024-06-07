@@ -133,7 +133,7 @@ const AuthForms = () => {
                 <i className="uil uil-times form_close"></i>
                 <div className="form login_form">
                     <form action="#">
-                        <h2>Login</h2>
+                        <h2>Zaloguj się</h2>
                         <div className="input_box">
                             <input type="email" placeholder="Wpisz swój email" id="email" required />
                             <i className="uil uil-envelope-alt email"></i>
@@ -156,7 +156,7 @@ const AuthForms = () => {
                 </div>
                 <div className="form signup_form">
                     <form action="#">
-                        <h2>Signup</h2>
+                        <h2>Zarejestruj się</h2>
                         <div className="input_box">
                             <input type="email" placeholder="Wpisz swój email" id="email" required />
                             <i className="uil uil-envelope-alt email"></i>

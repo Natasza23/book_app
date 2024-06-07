@@ -11,6 +11,7 @@ const Navbar = () => {
     return (
         <>
             <header className="header">
+            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
                 <div className="wrapper">
                     <div className="navbar">
                         <img src={logo} className="nav_logo" alt="logo" />
