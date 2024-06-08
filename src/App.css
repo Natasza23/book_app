@@ -116,6 +116,25 @@ img:hover {
   justify-items: center;
   text-align: center;
 }
+
+.toReadBooks {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  text-align: center;
+}
+
+.ReadBooks {
+  min-height: 80vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+  text-align: center;
+}
+
 /*szczegóły książki*/
 .book-details {
   min-height: 80vh;
