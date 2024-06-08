@@ -137,12 +137,11 @@ img:hover {
 
 /*szczegóły książki*/
 .book-details {
-  min-height: 80vh;
   width: 100%;
   display:flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 100px;
+  padding-left: 100px;
 }
 .book-description {
   margin: 80px;
@@ -152,7 +151,7 @@ img:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
   margin: 20px 0;
 }
 /*przyciski z katalogów*/
@@ -385,9 +384,10 @@ a:hover {
 .book-item p {
   margin: 5px 0;
 }
+
+/* pozycja tekstu dla niezalogowanego użytkownika*/
 .answer {
   display: flex;
   justify-content: center; /* Wyśrodkowanie wzdłuż osi poziomej */
-  align-items: center; /* Wyśrodkowanie wzdłuż osi pionowej */
-  height: 100vh; /* Ustawienie wysokości na całą wysokość widoku */
+  padding-left: 15px;
 }
