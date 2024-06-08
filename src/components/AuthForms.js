@@ -5,6 +5,7 @@ import { auth } from './firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import '../App.css';
 
+
 const AuthForms = () => {
     const navigate = useNavigate();
     const { login, user } = useAuth();
@@ -17,6 +18,7 @@ const AuthForms = () => {
         const signupBtn = document.querySelector("#signup");
         const loginBtn = document.querySelector("#login");
         const pwShowHide = document.querySelectorAll(".pw_hide");
+
 
         if (formOpenBtn && home && formCloseBtn && signupBtn && loginBtn) {
             formOpenBtn.addEventListener("click", () => home.classList.add("show"));
@@ -45,7 +47,6 @@ const AuthForms = () => {
                 formContainer.classList.remove("active");
             });
 
-            // Usuwamy wcześniej przypisane event listenery, aby uniknąć podwójnego przypisania
             const loginSubmit = document.getElementById('loginBtn');
             const signUpSubmit = document.getElementById('signUpBtn');
             const reset = document.getElementById('reset');
@@ -108,6 +109,7 @@ const AuthForms = () => {
                 .catch((error) => {
                     alert(error.message);
                 });
+
         }
     }, [navigate, login]);
 
