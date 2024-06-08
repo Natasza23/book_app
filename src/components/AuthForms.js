@@ -1,22 +1,9 @@
-// AuthForms.js
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
+import { auth } from './firebase';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import '../App.css';
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDbLAoMJSmfJqEEXmirGedS-dMYTyqrIGs",
-    authDomain: "ksiazki-app.firebaseapp.com",
-    projectId: "ksiazki-app",
-    storageBucket: "ksiazki-app.appspot.com",
-    messagingSenderId: "444970370079",
-    appId: "1:444970370079:web:e5ea117e6021efaa97012a"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
 const AuthForms = () => {
     const navigate = useNavigate();
@@ -58,58 +45,69 @@ const AuthForms = () => {
                 formContainer.classList.remove("active");
             });
 
+            // Usuwamy wcześniej przypisane event listenery, aby uniknąć podwójnego przypisania
             const loginSubmit = document.getElementById('loginBtn');
-            if (loginSubmit) {
-                loginSubmit.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const email = document.getElementById('email').value;
-                    const password = document.getElementById('password').value;
-
-                    signInWithEmailAndPassword(auth, email, password)
-                        .then((userCredential) => {
-                            login(userCredential.user);
-                            navigate("/LoggedIn");
-                        })
-                        .catch((error) => {
-                            alert(error.message);
-                        });
-                });
-            }
-
             const signUpSubmit = document.getElementById('signUpBtn');
-            if (signUpSubmit) {
-                signUpSubmit.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const email = document.getElementById('email').value;
-                    const password = document.getElementById('password').value;
-
-                    createUserWithEmailAndPassword(auth, email, password)
-                        .then((userCredential) => {
-                            login(userCredential.user);
-                            alert("Konto utworzone");
-                            navigate("/LoggedIn");
-                        })
-                        .catch((error) => {
-                            alert(error.message);
-                        });
-                });
-            }
-
             const reset = document.getElementById('reset');
-            if (reset) {
-                reset.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const email = document.getElementById('email').value;
 
-                    sendPasswordResetEmail(auth, email)
-                        .then(() => {
-                            alert("Wysłano email ze zmianą hasła");
-                        })
-                        .catch((error) => {
-                            alert(error.message);
-                        });
-                });
+            if (loginSubmit) {
+                loginSubmit.removeEventListener("click", handleLogin);
+                loginSubmit.addEventListener("click", handleLogin);
             }
+
+            if (signUpSubmit) {
+                signUpSubmit.removeEventListener("click", handleSignUp);
+                signUpSubmit.addEventListener("click", handleSignUp);
+            }
+
+            if (reset) {
+                reset.removeEventListener("click", handleReset);
+                reset.addEventListener("click", handleReset);
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    login(userCredential.user);
+                    navigate("/LoggedIn");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    login(userCredential.user);
+                    alert("Konto utworzone");
+                    navigate("/LoggedIn");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        }
+
+        function handleReset(event) {
+            event.preventDefault();
+            const email = document.getElementById('resetEmail').value;
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert("Wysłano email ze zmianą hasła");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
         }
     }, [navigate, login]);
 
@@ -125,11 +123,11 @@ const AuthForms = () => {
                     <form action="#">
                         <h2>Zaloguj się</h2>
                         <div className="input_box">
-                            <input type="email" placeholder="Wpisz swój email" id="email" required />
+                            <input type="email" placeholder="Wpisz swój email" id="loginEmail" required />
                             <i className="uil uil-envelope-alt email"></i>
                         </div>
                         <div className="input_box">
-                            <input type="password" placeholder="Wpisz swoje hasło" id="password" required />
+                            <input type="password" placeholder="Wpisz swoje hasło" id="loginPassword" required />
                             <i className="uil uil-lock password"></i>
                             <i className="uil uil-eye-slash pw_hide"></i>
                         </div>
@@ -148,11 +146,11 @@ const AuthForms = () => {
                     <form action="#">
                         <h2>Zarejestruj się</h2>
                         <div className="input_box">
-                            <input type="email" placeholder="Wpisz swój email" id="email" required />
+                            <input type="email" placeholder="Wpisz swój email" id="signUpEmail" required />
                             <i className="uil uil-envelope-alt email"></i>
                         </div>
                         <div className="input_box">
-                            <input type="password" placeholder="Wpisz swoje hasło" id="password" required />
+                            <input type="password" placeholder="Wpisz swoje hasło" id="signUpPassword" required />
                             <i className="uil uil-lock password"></i>
                             <i className="uil uil-eye-slash pw_hide"></i>
                         </div>
