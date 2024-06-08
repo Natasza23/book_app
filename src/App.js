@@ -19,6 +19,7 @@ const App = () => {
         <AuthProvider>
                 <Navbar />
                 <Routes>
+                    <Route path="/" element={<MainPage />} />
                     <Route path='/MainPage' element={<MainPage />} />
                     <Route path="/TBR" element={<PrivateRoute><TBR /></PrivateRoute>} />
                     <Route path="/MojaPolka" element={<PrivateRoute><MojaPolka /></PrivateRoute>} />

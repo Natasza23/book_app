@@ -4,7 +4,8 @@ const LoggedIn = () => {
     return (
         <div className='loggedIn'>
             <h1>Witaj ponownie użytkowniku!</h1>
-            <h2>Możesz teraz w odpowiednich zakładkach dodać książki do: przeczytanych, ulubionych lub do przeczytania.</h2>
+            <p>Możesz teraz w odpowiednich zakładkach dodać książki do: <b>chcę przeczytać</b>, <b>mojej półki</b> lub do <b>ulubionych</b>.</p>
+            <p>Szukasz konkretnej książki? Skorzystaj z naszej wyszukiwarki!</p>
         </div>
     );
 };

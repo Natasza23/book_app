@@ -2,9 +2,14 @@ import React from 'react';
 
 const MainPage = () => {
     return (
-        <div className='mainPage'>
-            <h1>Witamy na aplikacji książkowej!</h1>
-            <h2>W tej aplikacji możesz przeglądać i wyszukiwać książki, a po zarejestrowaniu i zalogowaniu możesz również dodawać je do sekcji do przeczytania i przeczytanych. Kiedy już dodasz książki do swojej półki, możesz również dodać je do ulubionych.</h2>
+        <div className='mainContainer'>
+            <h1>Witamy w Book App - miejsca, gdzie znajdziesz wszystkie ulubione książki!</h1>
+            <div className='siteDesc'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae impedit similique iure magni neque veniam aliquid, ullam vero. Aliquid, repudiandae? Quam, minima doloribus eveniet, libero aperiam quisquam perspiciatis aliquid at dolorem dicta qui sequi alias eos officiis omnis, consequatur error! Rem labore unde est voluptas dolores dolore corporis iure. Dolore reiciendis impedit non, quibusdam cupiditate error omnis reprehenderit possimus consequuntur labore quo maxime doloribus deserunt laboriosam quidem tenetur nesciunt quas, in quod eveniet iure. Esse voluptatem nulla, autem quis eos nemo iste. Perferendis consequuntur ad soluta aliquam possimus quibusdam, voluptatibus corrupti alias natus non, beatae facere iste iure nostrum.
+            </p></div>
+            <div className='cite'>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deleniti doloribus quis quidem? Sunt, magni!"</p></div>
+            <div className='author'><p> - Paolo Coelho</p></div>
         </div>
     );
 };
