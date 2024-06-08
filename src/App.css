@@ -315,7 +315,11 @@ a:hover {
   color: rgb(0, 29, 61);
 }
 
-
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 /* zapamiętaj/zapomniałem hasla*/
 .option_field {

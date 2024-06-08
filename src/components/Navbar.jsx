@@ -26,7 +26,7 @@ const Navbar = () => {
                                     </>
                                 )}
                                 <li><Link to="/katalog">Katalog</Link></li>
-                                <li><Link to="/Najlepsze">Najlepiej oceniane</Link></li>
+                                <li><Link to="/Najlepsze">Najlepsze</Link></li>
                                 <li><Link to="/SearchBox">Szukaj</Link></li>
                             </ul>
                             {!user ? (
